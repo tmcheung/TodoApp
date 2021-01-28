@@ -34,7 +34,7 @@ export function TaskList() {
 		<React.Fragment>
 			<ListModifier filter={filter} setFilter={setFilter} />
 			<div>
-				<label htmlFor="taskInput">Enter task description: </label>
+				<label htmlFor="taskInput">Enter task description:</label>
 				<br />
 				<input
 					name="taskInput"
@@ -42,16 +42,18 @@ export function TaskList() {
 					value={taskInputText}
 					placeholder="Buy books"
 					onChange={(e) => setTaskInputText(e.target.value)}
+					data-testid="taskDescriptionInput"
 				/>
 				<button onClick={handleTaskSubmit}>Add task</button>
 			</div>
-			<ol>
+			<ol data-testid="taskList">
 				{getFilteredTasks().map((t, i) => (
 					<Task
 						key={t.id}
 						index={i}
 						description={t.description}
-                        status={t.status}
+						status={t.status}
+						data-testid={t.id}
 					/>
 				))}
 			</ol>

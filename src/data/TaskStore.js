@@ -3,8 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const TaskContext = React.createContext(null);
 
-const taskReducer = (state, action) => {
-	console.log(action);
+export const taskReducer = (state, action) => {
 	let payload = action.payload;
 	switch (action.type) {
 		case "addTask":

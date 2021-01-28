@@ -23,6 +23,7 @@ export function Task({ description, index, status}) {
                 type="checkbox"
                 checked={status}
 				onChange={(e) => handleTaskCheckbox(e.target.checked)}
+				data-testid="checkbox"
 			/>
 			<span onClick={() => setShowEdit(true)}>{description}</span>
 			{showEdit && <EditTask setShowEdit={setShowEditCallback} index={index} description={description} />}

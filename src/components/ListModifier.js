@@ -24,6 +24,7 @@ export function ListModifier({ filter, setFilter }) {
 				type="text"
 				value={searchInput}
 				onChange={(e) => handleSearchChange(e.target.value)}
+				data-testid="searchInput"
 			/>
 			<select
 				defaultValue="all"
